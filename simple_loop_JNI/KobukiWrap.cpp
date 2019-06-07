@@ -36,6 +36,39 @@ JNIEXPORT void JNICALL Java_KobukiWrap_init(JNIEnv *env, jobject obj, jlong para
 	return;
 }
 
+JNIEXPORT void JNICALL Java_KobukiWrap_setBaseControl(JNIEnv *env, jobject obj, jdouble linearV, jdouble angularV) {
+	std::cout << "In setBaseControl()" << std::endl;
+	jclass c = env->GetObjectClass(obj);
+	// J is the type signature for long
+	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
+	jlong handle = env->GetLongField(obj, handleField);
+	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
+	k->setBaseControl(linearV, angularV);
+	return;
+}
+
+JNIEXPORT void JNICALL Java_KobukiWrap_enable(JNIEnv *env, jobject obj){
+	std::cout << "In enable()" << std::endl;
+	jclass c = env->GetObjectClass(obj);
+	// J is the type signature for long
+	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
+	jlong handle = env->GetLongField(obj, handleField);
+	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
+	k->enable();
+}
+
+JNIEXPORT void JNICALL Java_KobukiWrap_disable(JNIEnv *env, jobject obj) {
+	std::cout << "In disable()" << std::endl;
+	jclass c = env->GetObjectClass(obj);
+	// J is the type signature for long
+	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
+	jlong handle = env->GetLongField(obj, handleField);
+	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
+	k->disable();
+}
+
+
+
 JNIEXPORT void JNICALL Java_KobukiWrap_dispose(JNIEnv *env, jobject obj){
 	std::cout << "kobuki dispose" << std::endl;
 	jclass c = env->GetObjectClass(obj);
