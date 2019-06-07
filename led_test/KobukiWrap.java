@@ -8,14 +8,10 @@ public class KobukiWrap
 	public native void enable();
 	public native void disable();
 	public native void setBaseControl(double linear_velocity, double angular_velocity);
-	public native void setLed1Black();
-	public native void setLed1Red();
-	public native void setLed1Green();
-	public native void setLed1Orange();
-	public native void setLed2Black();
-	public native void setLed2Red();
-	public native void setLed2Green();
-	public native void setLed2Orange();
+	public native void setLedBlack(int ledNum);
+	public native void setLedRed(int ledNum);
+	public native void setLedGreen(int ledNum);
+	public native void setLedOrange(int ledNum);
 	
 	
 

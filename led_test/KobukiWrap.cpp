@@ -68,91 +68,63 @@ JNIEXPORT void JNICALL Java_KobukiWrap_setBaseControl(JNIEnv *env, jobject obj, 
 	return;
 }
 
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Black(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed1Black()" << std::endl;
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedBlack(JNIEnv *env, jobject obj, jint ledNum){
+	std::cout << "kobuki setLedBlack()" << std::endl;
 	jclass c = env->GetObjectClass(obj);
 	// J is the type signature for long
 	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
 	jlong handle = env->GetLongField(obj, handleField);
 	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)0, (kobuki::LedColour)0x00);
+	try{
+		k->setLed((kobuki::LedNumber)ledNum, (kobuki::LedColour)0x00);
+	} catch (int e) {
+		std::cout << "ERROR - C++ side" << std::endl;
+	}
 	return;
 }
 
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Red(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed1Red()" << std::endl;
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedRed(JNIEnv *env, jobject obj, jint ledNum){
+	std::cout << "kobuki setLedRed()" << std::endl;
 	jclass c = env->GetObjectClass(obj);
 	// J is the type signature for long
 	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
 	jlong handle = env->GetLongField(obj, handleField);
 	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)0, (kobuki::LedColour)0x100);
+	try{
+		k->setLed((kobuki::LedNumber)ledNum, (kobuki::LedColour)0x100);
+	} catch (int e) {
+		std::cout << "ERROR - C++ side" << std::endl;
+	}
 	return;
 }
 
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Green(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed1Green()" << std::endl;
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedGreen(JNIEnv *env, jobject obj, jint ledNum){
+	std::cout << "kobuki setLedGreen()" << std::endl;
 	jclass c = env->GetObjectClass(obj);
 	// J is the type signature for long
 	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
 	jlong handle = env->GetLongField(obj, handleField);
 	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)0, (kobuki::LedColour)0x200);
+	try{
+		k->setLed((kobuki::LedNumber)ledNum, (kobuki::LedColour)0x200);
+	} catch (int e) {
+		std::cout << "ERROR - C++ side" << std::endl;
+	}
 	return;
 }
 
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Orange(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed1Orange()" << std::endl;
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedOrange(JNIEnv *env, jobject obj, jint ledNum){
+	std::cout << "kobuki setLedOrange()" << std::endl;
 	jclass c = env->GetObjectClass(obj);
 	// J is the type signature for long
 	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
 	jlong handle = env->GetLongField(obj, handleField);
 	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)0, (kobuki::LedColour)0x300);
-	return;
-}
-
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Black(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed2Black()" << std::endl;
-	jclass c = env->GetObjectClass(obj);
-	// J is the type signature for long
-	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
-	jlong handle = env->GetLongField(obj, handleField);
-	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)1, (kobuki::LedColour)0x00);
-	return;
-}
-
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Red(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed2Red()" << std::endl;
-	jclass c = env->GetObjectClass(obj);
-	// J is the type signature for long
-	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
-	jlong handle = env->GetLongField(obj, handleField);
-	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)1, (kobuki::LedColour)0x100);
-	return;
-}
-
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Green(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed2Green()" << std::endl;
-	jclass c = env->GetObjectClass(obj);
-	// J is the type signature for long
-	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
-	jlong handle = env->GetLongField(obj, handleField);
-	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)1, (kobuki::LedColour)0x200);
-	return;
-}
-
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Orange(JNIEnv *env, jobject obj){
-	std::cout << "kobuki setLed2Orange()" << std::endl;
-	jclass c = env->GetObjectClass(obj);
-	// J is the type signature for long
-	jfieldID handleField = env->GetFieldID(c, "nativeHandle", "J");
-	jlong handle = env->GetLongField(obj, handleField);
-	kobuki::Kobuki *k = reinterpret_cast<kobuki::Kobuki *>(handle);
-	k->setLed((kobuki::LedNumber)1, (kobuki::LedColour)0x300);
+	try{
+		k->setLed((kobuki::LedNumber)ledNum, (kobuki::LedColour)0x300);
+	} catch (int e) {
+		std::cout << "ERROR - C++ side" << std::endl;
+	}
 	return;
 }
 

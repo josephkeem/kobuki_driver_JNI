@@ -49,67 +49,35 @@ JNIEXPORT void JNICALL Java_KobukiWrap_setBaseControl
 
 /*
  * Class:     KobukiWrap
- * Method:    setLed1Black
- * Signature: ()V
+ * Method:    setLedBlack
+ * Signature: (I)V
  */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Black
-  (JNIEnv *, jobject);
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedBlack
+  (JNIEnv *, jobject, jint);
 
 /*
  * Class:     KobukiWrap
- * Method:    setLed1Red
- * Signature: ()V
+ * Method:    setLedRed
+ * Signature: (I)V
  */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Red
-  (JNIEnv *, jobject);
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedRed
+  (JNIEnv *, jobject, jint);
 
 /*
  * Class:     KobukiWrap
- * Method:    setLed1Green
- * Signature: ()V
+ * Method:    setLedGreen
+ * Signature: (I)V
  */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Green
-  (JNIEnv *, jobject);
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedGreen
+  (JNIEnv *, jobject, jint);
 
 /*
  * Class:     KobukiWrap
- * Method:    setLed1Orange
- * Signature: ()V
+ * Method:    setLedOrange
+ * Signature: (I)V
  */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed1Orange
-  (JNIEnv *, jobject);
-
-/*
- * Class:     KobukiWrap
- * Method:    setLed2Black
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Black
-  (JNIEnv *, jobject);
-
-/*
- * Class:     KobukiWrap
- * Method:    setLed2Red
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Red
-  (JNIEnv *, jobject);
-
-/*
- * Class:     KobukiWrap
- * Method:    setLed2Green
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Green
-  (JNIEnv *, jobject);
-
-/*
- * Class:     KobukiWrap
- * Method:    setLed2Orange
- * Signature: ()V
- */
-JNIEXPORT void JNICALL Java_KobukiWrap_setLed2Orange
-  (JNIEnv *, jobject);
+JNIEXPORT void JNICALL Java_KobukiWrap_setLedOrange
+  (JNIEnv *, jobject, jint);
 
 /*
  * Class:     KobukiWrap

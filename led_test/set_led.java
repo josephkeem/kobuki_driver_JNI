@@ -23,21 +23,23 @@ class KobukiManager{
 		try {
 			kobuki.init(parameters.getNativeHandle());
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed1Red();
+			kobuki.setLedRed(0);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed1Green();
+			kobuki.setLedGreen(0);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed1Orange();
+			kobuki.setLedOrange(0);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed1Black();
+			kobuki.setLedBlack(0);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed2Red();
+			kobuki.setLedRed(1);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed2Green();
+			kobuki.setLedGreen(1);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed2Orange();
+			kobuki.setLedOrange(1);
 			TimeUnit.SECONDS.sleep(1);
-			kobuki.setLed2Black();
+			kobuki.setLedBlack(1);
+			TimeUnit.SECONDS.sleep(1);
+			kobuki.setLedBlack(3);
 		} catch(Exception e) {
 			System.out.println("ERROR - java side");
 			System.out.println(e.getMessage());
